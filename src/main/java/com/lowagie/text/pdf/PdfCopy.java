@@ -772,4 +772,19 @@ public class PdfCopy extends PdfWriter {
             return pageResources;
         }
     }
+
+    // FIXME: setOutlines from pdftk
+    protected PdfIndirectReference m_new_bookmarks = null; // ssteward: pdftk 1.46
+    // FIXME: setOutlines from pdftk
+    protected PdfIndirectReference m_new_extensions = null; // ssteward: pdftk 1.46
+
+    // FIXME: setOutlines from pdftk
+    public void setOutlines( PdfIndirectReference outlines ) {
+        m_new_bookmarks= outlines;
+    }
+    // FIXME: setExtensions from pdftk
+    public void setExtensions( PdfIndirectReference extensions ) {
+        m_new_extensions= extensions;
+    }
+
 }

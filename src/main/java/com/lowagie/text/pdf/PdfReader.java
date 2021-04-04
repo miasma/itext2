@@ -3513,4 +3513,14 @@ public class PdfReader implements PdfViewerPreferences {
     	if (!encrypted || !ownerPasswordUsed) return null;
     	return decrypt.computeUserPassword(password);
     }
+
+    // FIXME: getPRIndirectReference from pdftk
+    // ssteward
+    public PRIndirectReference getPRIndirectReference( PdfObject obj ) {
+        //int xref= getFreeXref();
+        //this.xrefObj[ xref ]= obj;
+        xrefObj.add(obj);
+        PRIndirectReference retVal = new PRIndirectReference(this, xrefObj.size() - 1);
+        return retVal;
+    }
 }

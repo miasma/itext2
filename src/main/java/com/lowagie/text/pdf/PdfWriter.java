@@ -3155,4 +3155,29 @@ public class PdfWriter extends DocWriter implements
     public void setRgbTransparencyBlending(boolean rgbTransparencyBlending) {
         this.rgbTransparencyBlending = rgbTransparencyBlending;
     }
+
+    // FIXME: fileID from pdftk
+
+    protected PdfObject fileID = null; // ssteward: allow setting of fileID
+
+    // FIXME: fileID from pdftk
+    /**
+     * Set the PDF ID; ssteward
+     */
+    public void setFileID( PdfObject fileID ) {
+        this.fileID = fileID;
+    }
+
+    // FIXME: fileID from pdftk
+    /**
+     * Get the pre-set PDF ID; ssteward
+     */
+    public PdfObject getFileID() {
+        return( this.fileID );
+    }
+
+// FIXME: filterStreams from pdftk
+    public boolean filterStreams = false;   // apply decode filters to some streams upon output
+    // FIXME: compressStreams from pdftk
+    public boolean compressStreams = false; // add compression to some stream upon output
 }
